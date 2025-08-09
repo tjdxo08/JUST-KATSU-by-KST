@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<title>JUST KATSU 주문 시스템</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<h1>JUST KATSU 메뉴</h1>
+<div id="menu-container"></div>
+
+<!-- 장바구니 박스 고정 -->
+<div id="cart-box">
+  <h2>장바구니</h2>
+  <div id="cart-items">장바구니가 비었습니다.</div>
+  <p><strong>총 합계: </strong><span id="cart-total">0</span>원</p>
+  <button id="to-order-btn" disabled>주문서 작성하기</button>
+</div>
+
+<!-- 주문서 입력 박스 -->
+<div id="order-form-box">
+  <h2>주문서 입력</h2>
+
+  <!-- 주문서 입력 위쪽에 장바구니 내용 미리보기 -->
+  <div id="order-cart-list"></div>
+
+  <label for="table-number">테이블 번호</label>
+  <input type="text" id="table-number" placeholder="예: 12" required>
+
+  <label for="order-note">요청사항</label>
+  <textarea id="order-note" rows="3" placeholder="예: 매운맛으로 해주세요."></textarea>
+
+  <button id="to-summary-btn">주문 요약 보기</button>
+  <button id="back-to-cart-btn">장바구니로 돌아가기</button>
+</div>
+
+<!-- 주문 요약 / 확인 박스 -->
+<div id="order-summary-box">
+  <h2>주문 요약 / 확인</h2>
+  <div id="summary-details"></div>
+  <button id="finalize-order-btn">최종 주문하기</button>
+  <button id="back-to-order-btn">주문서 수정하기</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

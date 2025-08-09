@@ -1,0 +1,237 @@
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  max-width: 900px;
+  margin: 20px auto 100px;
+  padding: 0 15px;
+  background: #fff8f0;
+  color: #333;
+}
+h1,h2 {
+  color: #d84315;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+h2 {
+  margin-top: 30px;
+  border-bottom: 2px solid #d84315;
+  padding-bottom: 5px;
+}
+.menu-item {
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.menu-info {
+  display: flex;
+  align-items: center;
+}
+.menu-img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 15px;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+.menu-name {
+  font-weight: 600;
+}
+.menu-price {
+  min-width: 90px;
+  text-align: right;
+  color: #d84315;
+  font-weight: 700;
+}
+.menu-item:hover {
+  background: #ffe6d6;
+}
+
+/* 장바구니 박스 고정 */
+#cart-box {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 320px;
+  max-height: 450px;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  overflow-y: auto;
+  font-size: 14px;
+  z-index: 999;
+}
+#cart-box h2 {
+  margin-top: 0;
+  font-size: 18px;
+  color: #d84315;
+}
+#cart-items {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding: 8px 0;
+}
+.cart-item div {
+  flex: 1;
+  padding: 0 5px;
+}
+.cart-item .qty-input {
+  width: 45px;
+  text-align: center;
+}
+.cart-item button.delete-btn {
+  background: #aaa;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 0.9rem;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.cart-item button.delete-btn:hover {
+  background: #777;
+}
+#cart-total {
+  font-weight: 700;
+  color: #d84315;
+}
+#to-order-btn {
+  width: 100%;
+  background: #d84315;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+#to-order-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+#to-order-btn:hover:not(:disabled) {
+  background: #bf360c;
+}
+/* 주문서 입력 박스 */
+#order-form-box {
+  max-width: 900px;
+  margin: 30px auto;
+  border: 1px solid #ddd;
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  display: none;
+}
+label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: 600;
+}
+input[type=text], textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+textarea {
+  resize: vertical;
+}
+#to-summary-btn, #back-to-cart-btn {
+  margin-top: 15px;
+  padding: 10px 15px;
+  border-radius: 4px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+#to-summary-btn {
+  background: #d84315;
+  color: white;
+}
+#to-summary-btn:hover {
+  background: #bf360c;
+}
+#back-to-cart-btn {
+  background: #aaa;
+  color: white;
+  margin-left: 10px;
+}
+#back-to-cart-btn:hover {
+  background: #777;
+}
+/* 주문서 입력 위쪽 장바구니 미리보기 박스 */
+#order-cart-list {
+  margin-bottom: 15px;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 10px;
+  background: #fff8f0;
+  border-radius: 5px;
+  font-size: 14px;
+}
+/* 주문 요약 박스 */
+#order-summary-box {
+  max-width: 900px;
+  margin: 30px auto;
+  border: 1px solid #ddd;
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  display: none;
+}
+#order-summary-box h2 {
+  margin-top: 0;
+}
+#summary-details table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 14px;
+}
+#summary-details th, #summary-details td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+#summary-details th {
+  background-color: #f5f5f5;
+}
+#finalize-order-btn, #back-to-order-btn {
+  padding: 10px 15px;
+  border-radius: 4px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+#finalize-order-btn {
+  background: #d84315;
+  color: white;
+}
+#finalize-order-btn:hover {
+  background: #bf360c;
+}
+#back-to-order-btn {
+  background: #aaa;
+  color: white;
+  margin-left: 10px;
+}
+#back-to-order-btn:hover {
+  background: #777;
+}
